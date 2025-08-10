@@ -15,6 +15,22 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: |
+          npm install -g @angular/cli
+          npm install
+
+      - name: Build Angular app
+        run: ng build --configuration production
+
       - uses: actions/checkout@v3
         with:
           submodules: true
@@ -30,7 +46,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "src" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist/namdan-app-v3" # Built app content directory - optional
+          output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -44,3 +60,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_POND_02F65B21E }}
           action: "close"
+
