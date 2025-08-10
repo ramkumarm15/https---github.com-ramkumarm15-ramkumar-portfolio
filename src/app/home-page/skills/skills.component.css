@@ -17,7 +17,12 @@
 .skills {
   position: relative;
   z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 /* Skills slider styles */
 .skills-slider-wrapper {
   overflow: hidden;

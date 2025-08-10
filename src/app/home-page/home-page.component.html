@@ -1,7 +1,7 @@
 <main class="main">
-  <app-banner></app-banner>
-  <app-about-me></app-about-me>
-  <app-experience></app-experience>
-  <app-skills></app-skills>
-  <app-contact></app-contact>
+  <app-loading-screen *ngIf="isLoading"></app-loading-screen>
+  <div *ngIf="!isLoading">
+    <app-banner></app-banner>
+    <app-floating-nav-buttons [nextRoute]="'/about'"></app-floating-nav-buttons>
+  </div>
 </main>

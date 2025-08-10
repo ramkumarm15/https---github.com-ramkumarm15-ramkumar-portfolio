@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FloatingNavButtonsComponent } from '../../floating-nav-buttons.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [],
+  imports: [FloatingNavButtonsComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })

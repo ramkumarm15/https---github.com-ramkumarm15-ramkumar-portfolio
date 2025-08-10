@@ -1,7 +1,34 @@
+.btn.btn-primary[download] {
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+  border-radius: 0% !important;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.btn.btn-primary[download]:hover {
+  background: #fff !important;
+  color: #000 !important;
+  border: 1px solid #fff !important;
+}
 .about-content {
   font-size: 1.8rem;
   color: #b3b3b3;
 }
+.about-me {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 
 @media (max-width: 992px) {
   .about-content {

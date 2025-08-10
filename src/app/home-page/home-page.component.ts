@@ -2,24 +2,30 @@
 import { Component } from '@angular/core';
 import { bounceAnimation } from '../animations';
 import { BannerComponent } from './banner/banner.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ContactComponent } from './contact/contact.component';
+import { FloatingNavButtonsComponent } from '../floating-nav-buttons.component';
+import { LoadingScreenComponent } from '../loading-screen.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
   imports: [
+    CommonModule,
     BannerComponent,
-    AboutMeComponent,
-    ExperienceComponent,
-    SkillsComponent,
-    ContactComponent
+    FloatingNavButtonsComponent,
+    LoadingScreenComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
   animations: [bounceAnimation],
 })
-export class HomePageComponent {}
+export class HomePageComponent {
+  isLoading = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000); // 1 second loading screen
+  }
+}

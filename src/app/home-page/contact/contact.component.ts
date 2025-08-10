@@ -1,17 +1,24 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FloatingNavButtonsComponent } from '../../floating-nav-buttons.component';
+import { LoadingScreenComponent } from '../../loading-screen.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FloatingNavButtonsComponent, LoadingScreenComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements AfterViewInit {
+  isLoading = true;
 
   ngAfterViewInit() {
     this.updateParallax();
     window.addEventListener('scroll', this.updateParallax);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000); // 1 second loading screen
   }
 
   updateParallax = () => {
@@ -27,5 +34,4 @@ export class ContactComponent implements AfterViewInit {
   ngOnDestroy() {
     window.removeEventListener('scroll', this.updateParallax);
   }
-
 }

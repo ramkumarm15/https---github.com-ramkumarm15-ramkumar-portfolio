@@ -1,8 +1,8 @@
-<section class="skills mt-5 mb-5">
+<section class="skills">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12 mt-5">
-        <h1 class="mb-5">Skills</h1>
+      <div class="col-md-12">
+        <h1 class="text-center mb-5">Skills</h1>
         <div class="skills-slider-wrapper" (wheel)="onSliderWheel($event)">
           <div class="skills-slider" #slider>
             <div class="skill-box">
@@ -59,4 +59,5 @@
       </div>
     </div>
   </div>
+  <app-floating-nav-buttons [prevRoute]="'/about'" [nextRoute]="'/contact'"></app-floating-nav-buttons>
 </section>
