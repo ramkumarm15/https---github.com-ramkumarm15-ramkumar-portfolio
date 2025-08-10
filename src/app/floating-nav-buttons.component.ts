@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
       z-index: 1000;
     }
     .nav-btn {
-      background: #000;
+      background: none;
       color: #fff;
       border: none;
       border-radius: 50%;
