@@ -1,0 +1,142 @@
+/*
+  Since this is a component stylesheet for Angular, :host is used to scope styles.
+  CSS variables are defined here for maintainability and consistency.
+*/
+:host {
+  --color-bg: #faf3dd;
+  --color-primary: #7c0a02;
+  --color-accent: #f2e3ac;
+  --color-text-on-primary: var(--color-bg);
+  --color-text-on-bg: var(--color-primary);
+  --color-white: #fff;
+}
+
+/*
+  Global styles like this are often better placed in a global stylesheet (e.g., styles.css)
+  to avoid side effects and maintain a clear separation of concerns.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* main {
+  background-color: var(--color-bg);
+  color: var(--color-text-on-bg);
+} */
+
+/* General heading styles within this component */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-accent);
+} */
+
+/* ==========================================================================
+   Banner Section
+   ========================================================================== */
+
+.banner {
+  background-color: var(--color-primary);
+  height: 100vh;
+  position: relative;
+  padding-bottom: 3rem;
+  left: 0;
+  background: url("/assets/images/wave.svg") no-repeat;
+  background-size: cover;
+  z-index: 10; /* Ensure it's above the main content if needed */
+}
+
+.banner-content {
+  height: 80vh;
+}
+
+
+.img-thumbnail {
+  background-color: var(--color-accent);
+}
+
+.bi-arrow-down-circle {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/*
+  !important can be a sign of specificity issues.
+  Consider using a more specific selector if possible to avoid it.
+  e.g., .banner .bounce-icon a
+*/
+.bounce-icon a {
+  color: var(--color-accent) !important;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ==========================================================================
+   Card & Timeline Section
+   ========================================================================== */
+
+
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0; /* Reset default padding */
+}
+
+/* The vertical line for the timeline */
+ul.timeline::before {
+  content: " ";
+  background: var(--color-accent);
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 1;
+}
+
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 60px; /* Increased padding to give more space from the line */
+  position: relative; /* Needed for the ::before pseudo-element positioning */
+}
+
+ul.timeline > li p.timeline-title {
+  color: var(--color-accent);
+}
+
+/* The circle/dot for each timeline item */
+ul.timeline > li::before {
+  content: " ";
+  background: var(--color-white);
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent);
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  .banner-title {
+    font-size: 5rem;
+    margin-top: 1rem;
+  }
+}
+

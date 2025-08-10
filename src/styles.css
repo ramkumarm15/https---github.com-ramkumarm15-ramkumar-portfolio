@@ -1,0 +1,29 @@
+body {
+  background: #000 !important;
+}
+* {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+:root {
+    --delft-blue: #3a405aff;
+    --powder-blue: #aec5ebff;
+    --champagne-pink: #f9dec9ff;
+    --melon: #e9afa3ff;
+    --umber: #685044ff;
+  }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Syne", sans-serif;
+  color: #fff;
+  font-weight: 800;
+}
+
+.card {
+  background-color: #000;
+  color: #fff;
+}
