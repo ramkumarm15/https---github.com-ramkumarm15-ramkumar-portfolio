@@ -18,7 +18,6 @@ import { CommonModule } from '@angular/common';
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
-  animations: [bounceAnimation],
 })
 export class HomePageComponent {
   isLoading = true;
